@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davem0303.github.io/highlevel-guide/sitemap.xml

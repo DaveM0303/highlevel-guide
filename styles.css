@@ -1,0 +1,272 @@
+:root {
+  --paper: #f3f0e8;
+  --sheet: #faf8f4;
+  --ink: #1c1916;
+  --muted: #5e584e;
+  --line: #ddd6c8;
+  --green: #1d4a38;
+  --green-dark: #143628;
+  --notice: #fff4cc;
+  --notice-line: #b0893e;
+  --max: 42rem;
+  --wide: 54rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--green);
+}
+
+a:hover {
+  color: var(--green-dark);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(var(--wide), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.narrow {
+  width: min(var(--max), 100%);
+}
+
+header {
+  padding: 1.5rem 0 0.5rem;
+}
+
+.brand {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.brand span {
+  color: var(--muted);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.disclosure {
+  background: var(--notice);
+  border: 1px solid var(--notice-line);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.disclosure p {
+  margin: 0;
+}
+
+.disclosure strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+h1 {
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+.lede {
+  font-size: 1.15rem;
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 2.25rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 1.5rem 0 0.4rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+section {
+  padding-bottom: 0.25rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--sheet);
+  font-size: 0.98rem;
+  margin: 0.5rem 0 1rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.compare td:first-child {
+  font-weight: 650;
+  width: 22%;
+}
+
+.actions {
+  background: var(--sheet);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.1rem 1.15rem 1.2rem;
+  margin: 1rem 0 2rem;
+}
+
+.actions .label {
+  margin: 0 0 0.85rem;
+  font-size: 0.98rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.button {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 650;
+  min-height: 48px;
+}
+
+.button:hover {
+  background: var(--green-dark);
+  color: #fff;
+}
+
+.link-list {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.link-list li {
+  margin: 0.35rem 0;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.25rem 0 2.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 0 0 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .wrap {
+    width: min(100% - 1.25rem, var(--wide));
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  table {
+    background: transparent;
+  }
+
+  tr {
+    background: var(--sheet);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 0.35rem 0.2rem;
+  }
+
+  td {
+    border-bottom: 0;
+    padding: 0.35rem 0.7rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 650;
+  }
+
+  .compare td:first-child {
+    width: auto;
+    font-size: 1.05rem;
+    padding-top: 0.65rem;
+  }
+
+  .compare td:first-child::before {
+    content: none;
+  }
+}
